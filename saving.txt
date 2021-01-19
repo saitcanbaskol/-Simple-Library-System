@@ -1,0 +1,72 @@
+void LibrarySystem::returnBook(const int bookId)
+{
+    bool bookExist = false;
+    int bookIndex;
+    int stuIndex;
+    allBooksNode* curBook = bookHead;
+    for(int i = 1; i <= getLengthBooks();i++)
+    {
+        if(curBook->item.getBookId() == bookId)
+        {
+            if(curBook->item.getStatus() == false)
+            {
+                bookIndex = i;
+                bookExist = true;
+            }
+        }
+        curBook = curBook->next;
+    }
+    if(bookExist)
+    {
+        Student::studentBookNode* prev;
+        Node* cur = head;
+        Student::studentBookNode* temp = cur->item.stuhead;
+        curBook = findBookPointer(bookIndex);
+        Student::studentBookNode* curSTN;
+        for(int i = 1; i <= getLength();i++)
+        {
+            for(int j = 1; j <= cur->item.getLength();j++)
+            {
+
+                 if(temp->item.getBookId() == bookId)
+                {
+                    curBook->item.setStatus(true);
+                    cout<<"Book: "<<bookId<<" Has been returned"<<endl;
+
+                    if(cur->item.getLength() == 1)
+                    {
+
+                        curSTN = cur->item.stuhead;
+                        cur->item.stuhead = cur->item.stuhead->next;
+                        curSTN->next = NULL;
+                        delete curSTN;
+                        curSTN = NULL;
+
+
+                    }
+                    else
+                    {
+                        prev = cur->item.findPointer(j - 1);
+                        curSTN = prev->next;
+                        prev->next = curSTN->next;
+                         curSTN->next = NULL;
+                        delete curSTN;
+                        curSTN = NULL;
+
+                    }
+
+        cout<<"A"<<endl;
+                }
+                temp = temp->next;
+        cout<<"B"<<endl;
+            }
+            cur = cur->next;
+            temp = cur->item.stuhead;
+            cout<<"C"<<endl;
+        }
+        cout<<"D"<<endl;
+    }
+    cout<<"F"<<endl;
+
+
+}

@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1608039839 source:c:\users\asus\desktop\cs201\hw3\partb\book.cpp
+	<iostream>
+	<cstddef>
+	<string>
+	"Book.h"
+
+1608039839 c:\users\asus\desktop\cs201\hw3\partb\book.h
+	<iostream>
+	<cstddef>
+	<string>
+
+1608039839 source:c:\users\asus\desktop\cs201\hw3\partb\student.cpp
+	<iostream>
+	<string>
+	<cstddef>
+	"Student.h"
+
+1608039839 c:\users\asus\desktop\cs201\hw3\partb\student.h
+	<iostream>
+	<string>
+	<cstddef>
+	"Book.h"
+
+1608039839 source:c:\users\asus\desktop\cs201\hw3\partb\librarysystem.cpp
+	<iostream>
+	<string>
+	"LibrarySystem.h"
+	<cstddef>
+
+1608039839 c:\users\asus\desktop\cs201\hw3\partb\librarysystem.h
+	<iostream>
+	<string>
+	<cstddef>
+	"Student.h"
+
+1608039576 source:c:\users\asus\desktop\cs201\hw3\partb\main.cpp
+	<iostream>
+	<string>
+	"LibrarySystem.h"
+	<cstddef>
+
